@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    style="@style/screen"
+    tools:context=".AddEditNoteActivity">
+
+    <LinearLayout
+        android:id="@+id/lL_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            style="@style/imgButton"
+            android:id="@+id/back_button"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="22dp"
+            android:background="@drawable/ic_back_btn">
+        </androidx.appcompat.widget.AppCompatImageButton>
+
+        <TextView
+            style="@style/textHigh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="@string/addNote">
+        </TextView>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+        </Space>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            style="@style/imgButton"
+            android:id="@+id/idBtnAddUpdate"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="12dp"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_disk">
+        </androidx.appcompat.widget.AppCompatImageButton>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lL_filesDrive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lL_note"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="22dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:orientation="vertical">
+
+            <EditText
+                style="@style/editText"
+                android:id="@+id/idEdtNoteTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:hint="@string/setTitleNote"
+                android:layout_marginTop="3dp">
+            </EditText>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    style="@style/editText"
+                    android:id="@+id/idEdtNoteDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:hint="@string/setDescriptionNote"
+                    android:layout_marginTop="3dp">
+                </EditText>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

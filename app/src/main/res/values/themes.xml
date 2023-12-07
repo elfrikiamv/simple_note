@@ -6,4 +6,100 @@
     </style>
 
     <style name="Theme.Simple_note" parent="Base.Theme.Simple_note" />
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
+
+    <!--light theme mode-->
+    <style name="screen" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:background">@color/backgroundLight</item>
+    </style>
+
+    <!--text color light-->
+    <style name="textHigh" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:textColor">@color/black_87</item>
+    </style>
+
+    <style name="textMedium" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:textColor">@color/black_60</item>
+    </style>
+
+    <style name="textDisabled" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:textColor">@color/black_38</item>
+    </style>
+
+    <!--imgButton color light-->
+    <style name="imgButton" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:backgroundTint">@color/black_87</item>
+    </style>
+
+    <!--button color light-->
+    <style name="button" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:background">@color/primaryLight</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!--floating button color light-->
+    <style name="buttonFloating" parent="Theme.AppCompat.NoActionBar">
+
+        <item name="fab_colorNormal">@color/primaryLight</item>
+        <item name="fab_colorPressed">@color/glass</item>
+        <item name="fab_colorRipple">@color/glass</item>
+        <item name="fab_shadowColor">@color/black</item>
+        <item name="fab_shadowRadius">6dp</item>
+        <item name="fab_showShadow">true</item>
+    </style>
+
+    <!--floating menu color light-->
+    <style name="menuFloating" parent="Theme.AppCompat.NoActionBar">
+
+        <item name="menu_backgroundColor">@color/floatingButtonBackgroundLight</item>
+        <item name="menu_colorNormal">@color/primaryLight</item>
+        <item name="menu_colorPressed">@color/black</item>
+        <item name="menu_colorRipple">@color/black</item>
+        <item name="menu_labels_colorNormal">@color/white</item>
+        <item name="menu_labels_colorPressed">@color/white</item>
+        <item name="menu_labels_colorRipple">@color/black</item>
+        <item name="menu_labels_showShadow">true</item>
+        <item name="menu_labels_textColor">@color/black</item>
+        <item name="menu_shadowColor">@color/black</item>
+        <item name="menu_shadowRadius">6dp</item>
+        <item name="menu_showShadow">true</item>
+    </style>
+
+    <!--noteitem for resycle view-->
+    <style name="noteItemCardView" parent="Theme.AppCompat.NoActionBar">
+        <item name="cardBackgroundColor">@color/white</item>
+    </style>
+
+    <!--Edit Text-->
+    <style name="editText" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:textColor">@color/black_60</item>
+        <item name="android:textColorHint">@color/black_60</item>
+    </style>
+
+    <!--Toolbar-->
+    <style name="toolbar" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:background">@color/primaryLight</item>
+    </style>
+
+    <!--NavigationView-->
+    <style name="navigationView" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:background">@color/backgroundLight</item>
+        <item name="itemIconTint">@color/black_87</item>
+        <item name="itemTextColor">@color/black_87</item>
+    </style>
+
+    <!--line-->
+    <style name="line" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:background">@color/black_38</item>
+    </style>
+
+    <!--cardBackgroundColor-->
+    <style name="cardBackgroundColor" parent="Theme.AppCompat.NoActionBar">
+        <item name="cardBackgroundColor">@color/backgroundLight</item>
+    </style>
 </resources>

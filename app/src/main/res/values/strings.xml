@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">simple_note</string>
+
+    <!--NoteActivity-->
+    <string name="note">Mis notas</string>
+    <string name="addNote">Agregar nota</string>
+    <string name="noteDesc">Agregue, edite y elimine sus notas</string>
+    <string name="setTitleNote">Presione para nombrar la nota</string>
+    <string name="setDescriptionNote">Presione para escribir en la nota</string>
+    <string name="title">Título</string>
 </resources>

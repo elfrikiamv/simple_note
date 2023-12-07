@@ -2,4 +2,43 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="carbon">#141414</color>
+    <color name="moradis">#6441a5</color>
+    <color name="invertidoC">#e6e6e6</color>
+    <color name="bg_fb">#292929</color>
+
+
+    <!--set color app-->
+    <color name="glass">#00000000</color>
+    <color name="primaryLight">#771B69</color>
+    <color name="primaryDark">#e492cb</color>
+    <color name="backgroundDark">#1a1319</color>
+    <color name="backgroundLight">#FFFFFFFF</color>
+
+    <!--color dark-->
+    <color name="white_87">#DEFFFFFF</color>
+    <color name="white_60">#99FFFFFF</color>
+    <color name="white_38">#61FFFFFF</color>
+
+    <color name="surface01dp">#1D1D1D</color>
+    <color name="surface02dp">#212121</color>
+    <color name="surface03dp">#242424</color>
+    <color name="surface04dp">#272727</color>
+    <color name="surface06dp">#2C2C2C</color>
+    <color name="surface08dp">#2D2D2D</color>
+    <color name="surface12dp">#313131</color>
+    <color name="surface16dp">#353535</color>
+    <color name="surface24dp">#373737</color>
+    <color name="floatingButtonBackgroundDark">#6B0C0C0C</color>
+
+    <color name="barNotiDark">#131313</color>
+
+    <!--color light-->
+    <color name="black_87">#DE000000</color>
+    <color name="black_60">#99000000</color>
+    <color name="black_38">#61000000</color>
+    <color name="barNotilight">#6E1961</color>
+    <color name="floatingButtonBackgroundLight">#6B1A1319</color>
+
 </resources>
