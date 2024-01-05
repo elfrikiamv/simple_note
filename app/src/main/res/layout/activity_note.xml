@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     style="@style/screen"
-    tools:context=".NoteActivity">
+    tools:context=".ui.NoteActivity">
 
     <LinearLayout
         android:id="@+id/lL_note"

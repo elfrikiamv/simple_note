@@ -1,12 +1,13 @@
-package com.elfrikiamv.simple_note
+package com.elfrikiamv.simple_note.room
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.elfrikiamv.simple_note.models.Note
 
-@Database (entities = arrayOf(Note::class),version = 1, exportSchema = false)
-abstract class NoteDatabase :RoomDatabase() {
+@Database(entities = arrayOf(Note::class), version = 1, exportSchema = false)
+abstract class NoteDatabase : RoomDatabase() {
     abstract fun getNotesDao(): NotesDao
 
     companion object {

@@ -1,4 +1,4 @@
-package com.elfrikiamv.simple_note
+package com.elfrikiamv.simple_note.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,13 +7,16 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.elfrikiamv.simple_note.R
+import com.elfrikiamv.simple_note.models.Note
+import com.elfrikiamv.simple_note.ui.NoteActivity
 
 class NoteRVAdapter(
     val context: Context,
     val noteClickInterface: NoteActivity,
     val noteClickDeleteInterface: NoteClickDeleteInterface
 
-): RecyclerView.Adapter<NoteRVAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<NoteRVAdapter.ViewHolder>() {
 
     private val allNotes = ArrayList<Note>()
 
@@ -24,35 +27,39 @@ class NoteRVAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.note_rv_item,parent, false);
-        return ViewHolder (itemView)
+        val itemView =
+            LayoutInflater.from(parent.context).inflate(R.layout.note_rv_item, parent, false)
+        return ViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.noteTV.setText(allNotes.get(position).noteTitle)
-        holder.timeTV.setText("Última actualización: " + allNotes.get(position).timeStamp)
+        holder.noteTV.text = allNotes.get(position).noteTitle
+        holder.timeTV.text = "Last updated: " + allNotes.get(position).timeStamp
 
         holder.deleteIV.setOnClickListener {
             noteClickDeleteInterface.onDeleteIconClick(allNotes.get(position))
         }
-            holder.itemView.setOnClickListener {
-                noteClickInterface.onNoteClick(allNotes.get(position))
-            }
+        holder.itemView.setOnClickListener {
+            noteClickInterface.onNoteClick(allNotes.get(position))
+        }
     }
 
     override fun getItemCount(): Int {
         return allNotes.size
     }
+
     fun updateList(newList: List<Note>) {
         allNotes.clear()
         allNotes.addAll(newList)
         notifyDataSetChanged()
     }
 }
-interface NoteClickDeleteInterface {
-            fun onDeleteIconClick(note: Note)
 
-        }
+interface NoteClickDeleteInterface {
+    fun onDeleteIconClick(note: Note)
+
+}
+
 interface NoteClickInterface {
-            fun onNoteClick(note: Note)
-            }
+    fun onNoteClick(note: Note)
+}

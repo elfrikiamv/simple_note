@@ -1,9 +1,10 @@
-package com.elfrikiamv.simple_note
+package com.elfrikiamv.simple_note.ui
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import com.elfrikiamv.simple_note.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,14 +13,9 @@ class MainActivity : AppCompatActivity() {
 
         val btnOpenSecondActivity = findViewById<Button>(R.id.btnOpenNoteActivity)
 
-        // Asigna un listener al botón para manejar clics
         btnOpenSecondActivity.setOnClickListener {
-            // Crea un Intent para abrir la SecondActivity
             val intent = Intent(this, NoteActivity::class.java)
-
-            // Inicia la SecondActivity
             startActivity(intent)
         }
-
     }
 }

@@ -1,9 +1,12 @@
-package com.elfrikiamv.simple_note
+package com.elfrikiamv.simple_note.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import com.elfrikiamv.simple_note.models.Note
+import com.elfrikiamv.simple_note.room.NoteDatabase
+import com.elfrikiamv.simple_note.room.NoteRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -16,12 +19,15 @@ class NoteViewModel(application: Application) : AndroidViewModel(application) {
         repository = NoteRepository(dao)
         allNotes = repository.allNotes
     }
+
     fun deleteNote(note: Note) = viewModelScope.launch(Dispatchers.IO) {
         repository.delete(note)
     }
-    fun updateNote(note: Note) = viewModelScope.launch (Dispatchers.IO) {
+
+    fun updateNote(note: Note) = viewModelScope.launch(Dispatchers.IO) {
         repository.update(note)
     }
+
     fun addNote(note: Note) = viewModelScope.launch(Dispatchers.IO) {
         repository.insert(note)
     }

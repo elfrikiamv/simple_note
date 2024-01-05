@@ -1,6 +1,7 @@
-package com.elfrikiamv.simple_note
+package com.elfrikiamv.simple_note.room
 
 import androidx.lifecycle.LiveData
+import com.elfrikiamv.simple_note.models.Note
 
 class NoteRepository(private val notesDao: NotesDao) {
     val allNotes: LiveData<List<Note>> = notesDao.getAlLNotes()
@@ -8,10 +9,12 @@ class NoteRepository(private val notesDao: NotesDao) {
     suspend fun insert(note: Note) {
         notesDao.insert(note)
     }
+
     suspend fun delete(note: Note) {
-            notesDao.delete(note)
+        notesDao.delete(note)
     }
+
     suspend fun update(note: Note) {
-            notesDao.update(note)
+        notesDao.update(note)
     }
 }

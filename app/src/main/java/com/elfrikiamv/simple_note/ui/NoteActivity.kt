@@ -1,4 +1,4 @@
-package com.elfrikiamv.simple_note
+package com.elfrikiamv.simple_note.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,17 +9,24 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.elfrikiamv.simple_note.R
+import com.elfrikiamv.simple_note.adapter.NoteClickDeleteInterface
+import com.elfrikiamv.simple_note.adapter.NoteClickInterface
+import com.elfrikiamv.simple_note.adapter.NoteRVAdapter
+import com.elfrikiamv.simple_note.models.Note
+import com.elfrikiamv.simple_note.viewmodels.NoteViewModel
 
 class NoteActivity : AppCompatActivity(), NoteClickDeleteInterface, NoteClickInterface {
     lateinit var notesRV: RecyclerView
     lateinit var addFAB: com.github.clans.fab.FloatingActionButton
     lateinit var viewModal: NoteViewModel
+
     //, NoteClickDeleteInterface, NoteClickInterface
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_note)
-        notesRV = findViewById (R.id.idRVNotes)
-        addFAB = findViewById (R.id.idFABAddNote)
+        notesRV = findViewById(R.id.idRVNotes)
+        addFAB = findViewById(R.id.idFABAddNote)
         notesRV.layoutManager = LinearLayoutManager(this)
 
         //------------->backButton
@@ -30,8 +37,13 @@ class NoteActivity : AppCompatActivity(), NoteClickDeleteInterface, NoteClickInt
         val noteRVAdapter = NoteRVAdapter(this, this, this)
 
         notesRV.adapter = noteRVAdapter
-        viewModal = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(NoteViewModel::class.java)
-        viewModal.allNotes.observe(this, Observer{ list->
+        viewModal = ViewModelProvider(
+            this,
+            ViewModelProvider.AndroidViewModelFactory.getInstance(application)
+        ).get(
+            NoteViewModel::class.java
+        )
+        viewModal.allNotes.observe(this, Observer { list ->
             list?.let {
                 noteRVAdapter.updateList(it)
             }
@@ -47,12 +59,13 @@ class NoteActivity : AppCompatActivity(), NoteClickDeleteInterface, NoteClickInt
         viewModal.deleteNote(note)
         Toast.makeText(this, "Borrando ${note.noteTitle}..", Toast.LENGTH_LONG).show()
     }
+
     override fun onNoteClick(note: Note) {
         val intent = Intent(this@NoteActivity, AddEditNoteActivity::class.java)
-        intent.putExtra("noteType","Edit")
-        intent.putExtra("noteTitle",note.noteTitle)
-        intent.putExtra("noteDescription",note.noteDescription)
-        intent.putExtra("noteID",note.id)
+        intent.putExtra("noteType", "Edit")
+        intent.putExtra("noteTitle", note.noteTitle)
+        intent.putExtra("noteDescription", note.noteDescription)
+        intent.putExtra("noteID", note.id)
         startActivity(intent)
         this.finish()
     }
